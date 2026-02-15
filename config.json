@@ -1,0 +1,11 @@
+{
+  "botName": "Lara-bot-v2-core",
+  "prefix": "!",
+  "ownerNumber": "5521999999999",
+  "ownerJid": "5521999999999@s.whatsapp.net",
+  "antiLink": true,
+  "antiFake": true,
+  "welcome": true,
+  "welcomeMessage": "👋 Bem-vindo(a) ao grupo, @user!",
+  "byeMessage": "👋 Adeus @user!"
+}

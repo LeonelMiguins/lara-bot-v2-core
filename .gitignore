@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Auth folder (sessões / tokens)
+auth/
+*.auth/
+session/
+sessions/
+src/data/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# Cache
+.cache/
+tmp/
