@@ -1,8 +1,6 @@
 {
   "botName": "Lara-bot-v2-core",
-  "prefix": "!",
-  "ownerNumber": "5521999999999",
-  "ownerJid": "5521999999999@s.whatsapp.net",
+  "prefix": "#",
   "antiLink": true,
   "antiFake": true,
   "welcome": true,

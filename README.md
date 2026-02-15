@@ -1,0 +1,197 @@
+
+
+<p align="center">
+  <img src="./img/cover.jpg" alt="Lara Bot" width="200"/>
+</p>
+
+
+<p align="center">
+  Um bot moderno e compacto para <strong>WhatsApp</strong> com foco em administração de membros em grupos usando a poderosa biblioteca <a href="https://github.com/WhiskeySockets/Baileys">@whiskeysockets/baileys ^7.0.0-rc.9</a>.<br>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/node-20.x-green" alt="Node.js">
+  <img src="https://img.shields.io/badge/platform-WhatsApp-green">
+  <img src="https://img.shields.io/badge/sharp-integrated-blue">
+  <img src="https://img.shields.io/badge/pino-integrated-blue">
+  <img src="https://img.shields.io/badge/Baileys-7.0.0--rc.9-brightgreen?">
+</p>
+
+
+<span style="color:yellow">OBS: essa é apenas a versão core (base) que eu uso para fazer outros bots, ele contém apenas comandos básicos de administração de grupos. Para bots mais completos consulte a minha página no GitHub.</span>
+
+
+
+---
+
+## 🚀 o que esse bot pode fazer:
+
+- ✅ Boas-vindas automáticas personalizadas para novos membros
+- ✅ Criação de figurinhas (stickers) a partir de imagens
+- ✅ Comandos administrativos: banir, promover e muito mais
+- ✅ Sistema anti-links inteligente: bloqueia links de grupos, sites adultos e casas de aposta
+
+---
+
+## 🚀 Instalação
+
+## Termux (Android)
+
+### 1. Atualize o termux
+
+```bash
+pkg update && pkg upgrade -y
+```
+
+### 2. Instale o Node e o Git
+
+```bash
+pkg install git nodejs -y
+```
+
+### 2. Instale o ffmpeg
+
+```bash
+pkg install ffmpeg
+```
+🎥 O FFmpeg é essencial para criação de figurinhas e manipulação de mídias.
+
+### 2. Clone o repositorio
+
+```bash
+git clone https://github.com/LeonelMiguins/lara-bot.git
+```
+
+### 3. Instalar as dependências do projeto
+
+```bash
+npm install
+```
+### 4. Rode o Bot
+
+```bash
+npm start
+```
+
+## Linux (Ubuntu/Debian)
+
+### 1. Atualize o sistema
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 2. Instale o Git
+
+```bash
+sudo apt install -y git curl
+```
+
+### 3. Instalar Node.js 
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+### 3. Clone o repositório do lara-bot
+
+```bash
+git clone https://github.com/LeonelMiguins/lara-bot.git
+```
+### 4. Instale o ffmpeg
+
+```bash
+sudo apt install ffmpeg -y
+```
+🎥 O FFmpeg é essencial para criação de figurinhas e manipulação de mídias.
+
+### 5. Instale as dependências do projeto
+
+```bash
+npm install
+```
+
+## VPS (Ubuntu/Debian)
+* É necessário ter uma conta gratuita na Oracle Cloud e uma instância VPS (máquina virtual) configurada com Ubuntu ou Debian. 
+Crie sua conta aqui: [https://www.oracle.com/cloud/free/](https://www.oracle.com/cloud/free/)
+
+* Segue a instalação normal do linux no passo anterior, a única diferença e que você ira precisar do ```pm2``` instalado para deixa o bot rodando como um processo do sistema linux.
+
+### 1. Instale o PM2
+
+Se você fechar o terminal ou perder a conexão SSH, o bot irá parar. Para mantê-lo sempre ativo como um serviço no Ubuntu, instale o PM2:
+
+```bash
+sudo npm install -g pm2
+```
+
+### 2. Inicie o bot com:
+
+```bash
+pm2 start npm --name lara-bot -- start
+pm2 save
+pm2 startup
+```
+---
+
+## Uso
+
+Envie o comando <b>#menu</b> para iniciar o bot.
+
+* O prefixo padrão é ```#```, mas você pode alteralo em ```src/config/config.js```
+
+
+## Colaboradores
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/LeonelMiguins">
+        <img src="https://github.com/LeonelMiguins.png" width="50px;" alt="Leonel Miguins"/>
+        <br />
+        <sub><b>Leonel Miguins</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/suspirinho7">
+        <img src="https://github.com/suspirinho7.png" width="50px;" alt="Cipher"/>
+        <br />
+        <sub><b>Cipher</b></sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/IsaStwart">
+        <img src="https://github.com/IsaStwart.png" width="50px;" alt="Cipher"/>
+        <br />
+        <sub><b>Isabella</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Licença
+
+### MIT Personalizada – Lara Bot
+
+MIT Personalizada – Lara Bot  
+Copyright (c) 2025 Leonel Miguins e colaboradores
+
+Permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados *Lara-bot*, para usar, copiar, modificar, mesclar, publicar e distribuir o Software, **exclusivamente para fins pessoais ou educacionais**.
+
+⚠️ É ESTRITAMENTE PROIBIDA a venda ou qualquer tipo de comercialização deste software, seja de forma direta ou indireta.
+
+⚠️ É OBRIGATÓRIO manter os créditos originais ao autor principal e/ou ao repositório oficial:
+
+- Nome: Leonel Miguins  
+- GitHub: https://github.com/LeonelMiguins  
+
+A remoção dos créditos ou qualquer tentativa de se apropriar da autoria original é terminantemente proibida.
+
+O software é fornecido "no estado em que se encontra", sem garantia de qualquer tipo, expressa ou implícita. Em nenhuma circunstância os autores serão responsáveis por quaisquer danos decorrentes do uso deste software.
+
+---
+
+Desenvolvido com ❤️ para a comunidade.
