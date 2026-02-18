@@ -15,7 +15,7 @@ module.exports = async function messageHandler(sock, msg, commands, PREFIX) {
 
   if (!text) return;
 
-  console.log("📩 Mensagem:", text);
+  //console.log("📩 Mensagem:", text);
 
   // ✅ AntiLink (ANTES dos comandos)
   antiLink(sock, msg).catch(console.log);
@@ -32,7 +32,7 @@ module.exports = async function messageHandler(sock, msg, commands, PREFIX) {
   const command = commands.get(commandName);
 
   if (!command) {
-    return sock.sendMessage(from, { text: "❌ Comando não existe." });
+    return sock.sendMessage(from, { text: "❌ Comando não existe. Envie *"+PREFIX+"menu* para ver os comandos, ou *"+PREFIX+"help* para ajuda"});
   }
 
   try {

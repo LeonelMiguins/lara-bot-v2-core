@@ -1,5 +1,6 @@
 {
-  "botName": "Lara-bot-v2-core",
+  "botName": "Lara Bot V2",
+  "owner": "Leonel Miguins",
   "prefix": "#",
   "antiLink": true,
   "antiFake": true,

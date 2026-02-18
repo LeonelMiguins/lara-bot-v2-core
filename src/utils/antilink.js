@@ -1,5 +1,10 @@
+const config = require("../../config.json"); // ajuste o caminho se necessário
+
 module.exports = async function antiLink(sock, msg) {
   try {
+    // ✅ só ativa se estiver ligado no config.json
+    if (!config.antiLink) return false;
+
     const from = msg.key.remoteJid;
 
     if (!from.endsWith("@g.us")) return false;
@@ -15,7 +20,8 @@ module.exports = async function antiLink(sock, msg) {
     if (!text) return false;
 
     // Detecta links
-    const linkRegex = /(https?:\/\/|www\.|t\.me\/|chat\.whatsapp\.com\/|wa\.me\/|[a-z0-9-]+\.(com|net|org|br|io|gg|tv|me|app|site|store|vip|bet|xyz|top|live|club|cc|co|info))/i;
+    const linkRegex =
+      /(https?:\/\/|www\.|t\.me\/|chat\.whatsapp\.com\/|wa\.me\/|[a-z0-9-]+\.(com|net|org|br|io|gg|tv|me|app|site|store|vip|bet|xyz|top|live|club|cc|co|info))/i;
 
     if (!linkRegex.test(text)) return false;
 
@@ -36,19 +42,14 @@ module.exports = async function antiLink(sock, msg) {
       return pNumber === botNumber;
     });
 
-    console.log("🤖 BOT NUMBER:", botNumber);
-    console.log("👥 BOT PARTICIPANT:", botParticipant);
-
     const isAdmin =
       botParticipant &&
       (botParticipant.admin === "admin" ||
         botParticipant.admin === "superadmin");
 
-    console.log("✅ BOT IS ADMIN?", isAdmin);
-
     if (!isAdmin) {
       await sock.sendMessage(from, {
-        text: "⚠️ Anti-link ativo, mas preciso ser ADMIN para apagar mensagens."
+        text: "⚠️ Anti-link está ativo, mas preciso ser ADMIN para apagar mensagens."
       });
       return true;
     }
@@ -70,6 +71,7 @@ module.exports = async function antiLink(sock, msg) {
     });
 
     return true;
+
   } catch (err) {
     console.log("❌ Erro no AntiLink:", err);
     return false;
