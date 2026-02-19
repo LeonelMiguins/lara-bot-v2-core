@@ -20,25 +20,19 @@ module.exports = async function welcomeHandler(sock, update, PREFIX = "!") {
       if (action === "add") {
         await sock.sendMessage(groupId, {
           text:
-            `🎉 *Bem-vindo(a) ao grupo!* 🎉\n\n` +
-            `👤 Usuário: ${mention}\n` +
-            `🏷️ Grupo: *${groupName}*\n` +
-            `👥 Membros agora: *${totalMembers}*\n\n` +
-            `📌 Leia as regras do grupo e seja respeitoso.\n` +
-            `🤖 Para ver meus comandos digite:\n\n` +
-            `✨ *${PREFIX}menu*\n\n` +
-            `🚀 Aproveite e seja bem-vindo(a)!`,
+            `🎉 *Olá ${mention}, Bem-vindo(a) ao grupo *${groupName}*!* 🎉\n\n` +
+            `📌 Para ver as regras envie *${PREFIX}rules*.\n` +
+            `📌 Para ver meus comandos envie *${PREFIX}menu*.\n\n` +
+            `👥 Membros agora: *${totalMembers}*\n\n`,
           mentions: [userJid]
         });
 
       } else if (action === "remove") {
         await sock.sendMessage(groupId, {
           text:
-            `👋 *Saiu do grupo!*\n\n` +
-            `👤 Usuário: ${mention}\n` +
-            `🏷️ Grupo: *${groupName}*\n` +
+            `*${mention}* saiu do grupo *${groupName}*!\n\n` +
             `👥 Membros agora: *${totalMembers}*\n\n` +
-            `😶‍🌫️ Até mais...`,
+            `👋  Até mais...`,
           mentions: [userJid]
         });
       }

@@ -1,3 +1,5 @@
+const config = require("../../config.json");
+
 module.exports = {
   name: "menu",
   description: "Mostra o menu de comandos",
@@ -5,37 +7,43 @@ module.exports = {
     try {
       const from = msg.key.remoteJid;
 
+      const PREFIX = config.prefix || "!";
+
       const menuText = `
-🤖 *MENU - LARA BOT V2*
+━━━━━━━━━━━━━━━━━━
+📂 *MENU - ${config.botName || "BOT"}*
+━━━━━━━━━━━━━━━━━━
 
-📌 *COMANDOS DE ADMIN*
-
-🔇 !mute
-🔊 !unmute
-📝 !setname <novo nome>
-📢 !tagall <mensagem opcional>
-👮 !adms
-🔗 !link
-👢 !ban @membro ou (respondendo)
-⬆️ !promote @membro ou (respondendo)
-⬇️ !demote @membro ou (respondendo)
+🔇 ${PREFIX}mute
+🔊 ${PREFIX}unmute
+📝 ${PREFIX}setname <novo nome>
+📝 ${PREFIX}setdesc <nova descrição>
+📢 ${PREFIX}tagall <mensagem opcional>
+👮 ${PREFIX}adms
+🔗 ${PREFIX}link
+👢 ${PREFIX}ban @membro ou (respondendo)
+⬆️ ${PREFIX}promote @membro ou (respondendo)
+⬇️ ${PREFIX}demote @membro ou (respondendo)
 
 🖼️ *FIGURINHAS / IMAGENS*
-🎭 !sticker (imagem → figurinha)
-🖼️ !toimg (imagem → imagem)
+🎭 ${PREFIX}sticker (imagem → figurinha)
+🖼️ ${PREFIX}toimg (Visualização única → imagem)
 
 🛡️ *SEGURANÇA*
-🚫 AntiLink automático (já ativo no bot)
-🔒 !protect on
-🔓 !protect off
+🚫 AntiLink automático (se ativado no config)
+🔗 ${PREFIX}antilink on/off
+🔒 ${PREFIX}protect on
+🔓 ${PREFIX}protect off
 
 ℹ️ *INFO*
-📜 !rules
-📜 !rules set (respondendo uma mensagem)
+📜 ${PREFIX}rules
+📜 ${PREFIX}rules set (respondendo uma mensagem)
+💾 ${PREFIX}save (respondendo msg)
+📂 ${PREFIX}saves
 
 ━━━━━━━━━━━━━━━━━━
-⚡ *Use os comandos com !*
-📌 Exemplo: !tagall Bora geral!
+⚡ *Use os comandos com ${PREFIX}*
+📌 Exemplo: ${PREFIX}tagall Bora geral!
 `;
 
       await sock.sendMessage(from, { text: menuText }, { quoted: msg });

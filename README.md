@@ -129,11 +129,23 @@ sudo npm install -g pm2
 ### 2. Inicie o bot com:
 
 ```bash
-pm2 start npm --name lara-bot -- start
+pm2 start npm --name lara-bot-v2 -- start
 pm2 save
 pm2 startup
 ```
 ---
+
+### 3. Escanei o QRCODE pelo log do PM2:
+
+```bash
+pm2 logs 0
+```
+ou:
+
+```bash
+pm2 logs lara-bot-v2
+```
+
 
 ## Uso
 
